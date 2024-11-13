@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منظم حياة الطالب الجامعي</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>منظم حياة الطالب الجامعي</h1>
+        <nav>
+            <a href="#schedule">جدول المحاضرات</a>
+            <a href="#tasks">مهام اليوم</a>
+            <a href="#notes">الملاحظات</a>
+            <a href="#references">المراجع الدراسية</a>
+        </nav>
+    </header>
+    
+    <section class="container">
+        <!-- جدول المحاضرات -->
+        <div id="schedule" class="card">
+            <i class="icon">&#x1F4DA;</i>
+            <h2>جدول المحاضرات</h2>
+            <p>تنظيم جدول المحاضرات لتسهيل متابعتها.</p>
+            <button onclick="openPopup('جدول المحاضرات')">عرض الجدول</button>
+        </div>
+
+        <!-- مهام اليوم -->
+        <div id="tasks" class="card">
+            <i class="icon">&#x1F4C5;</i>
+            <h2>مهام اليوم</h2>
+            <p>إدارة المهام اليومية بشكل سهل ومرتب.</p>
+            <button onclick="openPopup('مهام اليوم')">إضافة مهمة</button>
+        </div>
+
+        <!-- الملاحظات -->
+        <div id="notes" class="card">
+            <i class="icon">&#x1F4BB;</i>
+            <h2>ملاحظات</h2>
+            <p>تسجيل الملاحظات الهامة خلال المحاضرات.</p>
+            <button onclick="openPopup('الملاحظات')">إضافة ملاحظة</button>
+        </div>
+
+        <!-- المراجع الدراسية -->
+        <div id="references" class="card">
+            <i class="icon">&#x1F4D6;</i>
+            <h2>المراجع الدراسية</h2>
+            <p>حفظ وتنظيم المراجع التي يحتاجها الطالب.</p>
+            <button onclick="openPopup('المراجع الدراسية')">عرض المراجع</button>
+        </div>
+    </section>
+
+    <!-- قسم عرض المحتوى المحفوظ -->
+    <section id="stored-content" class="container">
+        <h2>المحتوى المحفوظ</h2>
+        <div class="card" id="schedule-content">
+            <h3>جدول المحاضرات</h3>
+            <p id="schedule-text">لا يوجد محتوى محفوظ.</p>
+            <button class="delete-button" onclick="deleteContent('جدول المحاضرات')">حذف المحتوى</button>
+        </div>
+        <div class="card" id="tasks-content">
+            <h3>مهام اليوم</h3>
+            <p id="tasks-text">لا يوجد محتوى محفوظ.</p>
+            <button class="delete-button" onclick="deleteContent('مهام اليوم')">حذف المحتوى</button>
+        </div>
+        <div class="card" id="notes-content">
+            <h3>ملاحظات</h3>
+            <p id="notes-text">لا يوجد محتوى محفوظ.</p>
+            <button class="delete-button" onclick="deleteContent('الملاحظات')">حذف المحتوى</button>
+        </div>
+        <div class="card" id="references-content">
+            <h3>المراجع الدراسية</h3>
+            <p id="references-text">لا يوجد محتوى محفوظ.</p>
+            <button class="delete-button" onclick="deleteContent('المراجع الدراسية')">حذف المحتوى</button>
+        </div>
+    </section>
+
+    <!-- نافذة منبثقة للمحتوى -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <textarea placeholder="اكتب هنا..."></textarea>
+            <button onclick="saveContent()">حفظ</button>
+        </div>
+    </div>
+
+    <!-- مكان ظهور الإشعار المؤقت -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
